@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer"
 import { TestimonialsSection } from "@/components/testimoni-section"
 import { FaqSection } from "@/components/faq-section"
 import { ServiceCoverage } from "@/components/service-coverage"
+import { GallerySection } from "@/components/gallery-section"
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Header />
       <HeroSection />
       <ServicesSection />
+      <GallerySection/>
       <ServicePromiseSection/>
       <TestimonialsSection/>
       <ServiceCoverage/>
