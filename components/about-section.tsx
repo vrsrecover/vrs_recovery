@@ -58,11 +58,11 @@ export function AboutSection() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-4 bg-blue-50 rounded-lg border border-blue-600">
                   <div className="text-2xl font-bold text-blue-600">15,000+</div>
-                  <div className="text-sm text-gray-600">Happy Customers</div>
+                  <div className="text-sm font-semibold text-gray-600">Happy Customers</div>
                 </div>
                 <div className="text-center p-4 bg-orange-50 rounded-lg border border-orange-600">
                   <div className="text-2xl font-bold text-orange-600">24/7</div>
-                  <div className="text-sm text-gray-600">Always Available</div>
+                  <div className="text-sm text-semibold text-gray-600">Always Available</div>
                 </div>
               </div>
             </motion.div>

@@ -106,13 +106,18 @@ export default function RootLayout({
             telephone: "+447475365247",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "123 Main St",
-              addressLocality: "London",
+              streetAddress: "Morford Rd, Aldridge",
+              addressLocality: "Walsall",
               addressRegion: "England",
-              postalCode: "SW1A 1AA",
+              postalCode: "WS9 8TH",
               addressCountry: "GB",
             },
-            openingHours: "Mo-Su 08:00-18:00",
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 52.610,
+              "longitude": -1.922,
+            },
+            openingHours: ["Mo-Su 08:00-18:00"],
           })}
         </Script>
       </body>
