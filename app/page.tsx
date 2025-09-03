@@ -15,10 +15,10 @@ export default function HomePage() {
     <main className="min-h-screen bg-background">
       <Header />
       <HeroSection />
-      {/* <ServicesSection /> */}
+      <ServicesSection />
       <GallerySection/>
       <ServicePromiseSection/>
-      <TestimonialsSection/>
+      {/* <TestimonialsSection/> */}
       <ServiceCoverage/>
       <AboutSection />
       <ContactSection />
