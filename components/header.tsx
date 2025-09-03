@@ -34,7 +34,7 @@ export function Header() {
           : "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-200/20 dark:border-gray-700/20"
       }`}
     >
-      <div className="container mx-auto px-4 md:py-6 py-8">
+      <div className="container mx-auto max-w-full px-6 md:py-6 py-10">
         <div className="flex items-center justify-center relative">
           {/* Logo positioned absolutely to the left */}
           <div className="absolute left-0 flex items-center space-x-3">
@@ -43,7 +43,7 @@ export function Header() {
                 className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-2xl backdrop-blur-sm border transition-all duration-300 ${
                   isInHero
                     ? "bg-white dark:bg-gray-900/90 border-white/20 hover:bg-white dark:hover:bg-gray-800"
-                    : "bg-white dark:bg-blue-500 border-blue-500/20 hover:bg-blue-700 dark:hover:bg-blue-600"
+                    : "bg-white dark:bg-gray-700 border-blue-500/20 hover:bg-transparent"
                 }`}
               >
                 {/* Re-Routing to homepage */}
@@ -154,7 +154,7 @@ export function Header() {
 
         {isMenuOpen && (
           <div
-            className={`md:hidden mt-4 pb-4 rounded-lg p-4 mt-6 backdrop-blur-sm shadow-xl border transition-all duration-300 ${
+            className={`md:hidden py-4 rounded-lg p-4 mt-10 backdrop-blur-sm shadow-xl border transition-all duration-300 ${
               isInHero
                 ? "bg-transparent dark:bg-gray-900/90 border-white/30 dark:border-gray-700/30"
                 : "bg-transparent dark:bg-gray-900/95 border-gray-200/30 dark:border-gray-600/30"
