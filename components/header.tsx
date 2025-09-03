@@ -34,7 +34,7 @@ export function Header() {
           : "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-200/20 dark:border-gray-700/20"
       }`}
     >
-      <div className="container mx-auto max-w-full px-6 md:py-6 py-10">
+      <div className="container max-w-full px-6 md:py-6 py-10">
         <div className="flex items-center justify-center relative">
           {/* Logo positioned absolutely to the left */}
           <div className="absolute left-0 flex items-center space-x-3">
