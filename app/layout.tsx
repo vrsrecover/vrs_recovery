@@ -97,11 +97,11 @@ export default function RootLayout({
         {/* Structured Data for Local Business SEO */}
         <Script id="ld-json" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
-            "@context": "",
+            "@context": "https://schema.org",
             "@type": "AutomotiveBusiness",
             name: "VRS Recovery",
             url: "https://vrsrecovery.co.uk",
-            logo: "",
+            logo: "https://vrsrecovery.co.uk/logos/vrs-logo.png",
             description: "VRS Recovery provides 24/7 Vehicle Recovery & Roadside Assistance across the UK. Fast, reliable towing, jump-starts, fuel delivery, and breakdown help when you it most.",
             telephone: "+447475365247",
             address: {
