@@ -8,7 +8,7 @@ const nextConfig = {
   },
   images: {
     domains: ['vrsrecovery.co.uk'],
-    formats: ['image/webp', 'image/png', 'image/avif'],
+    formats: ['image/webp', 'image/avif'],
     unoptimized: false, 
   },
   async headers() {
