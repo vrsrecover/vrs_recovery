@@ -35,9 +35,13 @@ export const metadata: Metadata = {
   publisher: 'VRS Recovery',
 
   icons:{
-    icon: "https://vrsrecovery.co.uk/favicon.ico",
-    shortcut: "https://vrsrecovery.co.uk/favicon-32x32.png",
-    apple: "https://vrsrecovery.co.uk/apple-touch-icon.png",
+    icon: '/favicon.ico',
+    shortcut: '/favicon-32x32.png',
+    apple: '/apple-touch-icon.png',
+    other: {
+      rel: "preload",
+      url: "/android-chrome-512x512.png",
+    },
   },
 
   manifest: "/site.webmanifest",
@@ -49,7 +53,7 @@ export const metadata: Metadata = {
     siteName: "VRS Recovery",
     images: [
       {
-        url: "/android-chrome-512x512.png",
+        url: "https://vrsrecovery.co.uk/android-chrome-512x512.png",
         width: 512,
         height: 512,
         alt: "VRS Recovery Roadside Assistance UK"
