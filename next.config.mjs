@@ -9,7 +9,7 @@ const nextConfig = {
   images: {
     domains: ['vrsrecovery.co.uk'],
     formats: ['image/webp', 'image/avif'],
-    unoptimized: false, 
+    unoptimized: true, 
   },
   async headers() {
     return [
