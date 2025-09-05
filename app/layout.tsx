@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "VRS Recovery",
     images: [
       {
-        url: "",
+        url: "/android-chrome-512x512.png",
         width: 512,
         height: 512,
         alt: "VRS Recovery Roadside Assistance UK"
