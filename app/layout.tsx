@@ -92,7 +92,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preload" href="https://vrsrecovery.co.uk/favicon.ico" as="image"/>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
       </head>
       <body className={`font-sans ${spaceGrotesk.variable} ${dmSans.variable} antialiased`}>
         {children}
