@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button"
 
 const fileNames = [
   "gal1.jpg", "gal2.jpg", "gal3.jpg", "gal4.jpg", "gal5.jpg",
-  "gal6.jpg", "gal7.jpg", "gal8.jpg", "gal9.jpg", "gal10.jpg",
-  "gal11.jpg", "gal12.jpg", "gal13.jpg", "gal14.jpg", "gal15.jpg",
-  "gal16.png", "gal17.jpg", "gal18.jpg", "gal19.png", "gal20.png",
-  "gal21.png", "gal22.jpg", "gal23.png", "gal24.png", "gal25.jpeg",
+  "gal6.jpg", "gal7.jpg", "gal8.JPG", "gal9.jpg", "gal10.jpg",
+  "gal11.jpg", "gal12.jpg", "gal13.JPG", "gal14.jpg", "gal15.jpg",
+  "gal16.jpg", "gal17.PNG", "gal18.jpg", "gal19.jpg", "gal20.jpg",
+  "gal21.jpg", "gal22.jpg", "gal23.jpg", "gal24.jpg",
 ]
 
 const galleryImages = fileNames.map((file, i) => {
