@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   publisher: 'VRS Recovery',
 
   icons:{
-    icon: "https://vrsrecovery.co.uk//favicon.ico",
-    shortcut: "https://vrsrecovery.co.uk//favicon-32x32.png",
-    apple: "https://vrsrecovery.co.uk//apple-touch-icon.png",
+    icon: "https://vrsrecovery.co.uk/favicon.ico",
+    shortcut: "https://vrsrecovery.co.uk/favicon-32x32.png",
+    apple: "https://vrsrecovery.co.uk/apple-touch-icon.png",
   },
 
   manifest: "/site.webmanifest",
