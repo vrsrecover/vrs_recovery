@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   publisher: 'VRS Recovery',
 
   icons:{
-    icon: '/favicon.ico',
+    icon: '/android-chrome-192x192.png',
     shortcut: '/favicon-32x32.png',
     apple: '/apple-touch-icon.png',
     // other: {
