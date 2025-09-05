@@ -47,7 +47,7 @@ export function Header() {
                 }`}
               >
                 {/* Re-Routing to homepage */}
-                <a href="/">
+                <Link href="/">
                   <Image
                     alt="VRS Recovery"
                     src="/logos/vrs-logo.png"
@@ -55,7 +55,7 @@ export function Header() {
                     height={56}
                     className="object-contain"
                   />
-                </a>
+                </Link>
               </div>
               <div className="flex flex-col">
                 <span

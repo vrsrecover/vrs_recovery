@@ -38,10 +38,10 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
     shortcut: '/favicon-32x32.png',
     apple: '/apple-touch-icon.png',
-    other: {
-      rel: "preload",
-      url: "/android-chrome-512x512.png",
-    },
+    // other: {
+    //   rel: "icon",
+    //   url: "/android-chrome-512x512.png",
+    // },
   },
 
   manifest: "/site.webmanifest",
@@ -97,7 +97,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
          <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
-         <link rel="preload" href="/android-chrome-512x512.png" as="image" />
+         {/* <link rel="preload" href="/android-chrome-512x512.png" as="image" /> */}
       </head>
       <body className={`font-sans ${spaceGrotesk.variable} ${dmSans.variable} antialiased`}>
         {children}

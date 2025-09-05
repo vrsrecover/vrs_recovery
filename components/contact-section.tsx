@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, Clock, Send, Sparkles } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, Send, Sparkles, Locate, AlertCircle } from "lucide-react"
 import { motion, useInView } from "framer-motion"
 
 export function ContactSection() {
@@ -25,32 +25,79 @@ export function ContactSection() {
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [locationError, setLocationError] = useState<string | null>(null)
+  const [isLocating, setIsLocating] = useState(false)
 
-  // Get user location automatically
   const detectLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        async (pos) => {
-          const { latitude, longitude } = pos.coords
-          try {
-            const res = await fetch(
-              `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`,
-            )
-            const data = await res.json()
-            const address = data.display_name || `${latitude},${longitude}`
-            setFormData((prev) => ({ ...prev, pickup: address }))
-          } catch (err) {
-            console.error("Location fetch failed:", err)
-          }
-        },
-        (err) => console.warn("Location access denied", err),
-      )
+    if (!navigator.geolocation) {
+      setLocationError("Geolocation is not supported by your browser")
+      return
     }
+
+    setIsLocating(true)
+    setLocationError(null)
+
+    navigator.geolocation.getCurrentPosition(
+      async (pos) => {
+        try {
+          const { latitude, longitude } = pos.coords
+          const res = await fetch(
+            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`,
+          )
+          const data = await res.json()
+          const address = data.display_name || `${latitude.toFixed(6)},${longitude.toFixed(6)}`
+          setFormData((prev) => ({ ...prev, pickup: address }))
+          setLocationError(null)
+        } catch (err) {
+          console.error("Location fetch failed:", err)
+          setLocationError("Failed to get address from coordinates")
+        } finally {
+          setIsLocating(false)
+        }
+      },
+      (err) => {
+        console.warn("Location access denied", err)
+        setIsLocating(false)
+        
+        switch (err.code) {
+          case err.PERMISSION_DENIED:
+            setLocationError("Location access denied. Please enable location permissions in your browser settings.")
+            break
+          case err.POSITION_UNAVAILABLE:
+            setLocationError("Location information is unavailable.")
+            break
+          case err.TIMEOUT:
+            setLocationError("Location request timed out.")
+            break
+          default:
+            setLocationError("An unknown error occurred.")
+            break
+        }
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 60000
+      }
+    )
   }
 
   useEffect(() => {
-    detectLocation()
+    if (navigator.geolocation && navigator.permissions) {
+      navigator.permissions.query({ name: 'geolocation' }).then((result) => {
+        if (result.state === 'granted') {
+          detectLocation()
+        } else if (result.state === 'prompt') {
+          detectLocation()
+        }
+        // If 'denied', don't attempt automatically
+      })
+    }
   }, [])
+
+  // useEffect(() => {
+  //   detectLocation()
+  // }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -310,6 +357,32 @@ export function ContactSection() {
                           required
                           className="h-12 border-slate-200 focus:border-indigo-400 focus:ring-indigo-400/20 transition-all duration-300 hover:border-slate-300"
                         />
+                        {locationError && (
+                        <div className="flex items-center gap-2 mt-2 text-sm text-red-600">
+                          <AlertCircle className="w-4 h-4" />
+                          <span>{locationError}</span>
+                        </div>
+                        )}
+                        <Button
+                          type="button"
+                          variant="outline"
+                          size="sm"
+                          onClick={detectLocation}
+                          disabled={isLocating}
+                          className="flex items-center gap-2 text-xs"
+                        >
+                          {isLocating ? (
+                            <>
+                              <div className="w-3 h-3 border-2 border-orange-400/30 border-t-orange-600 rounded-full animate-spin" />
+                              Locating...
+                            </>
+                          ) : (
+                            <>
+                              <Locate className="w-3 h-3" />
+                              Use My Location
+                            </>
+                          )}
+                        </Button>
                       </motion.div>
 
                       <motion.div
