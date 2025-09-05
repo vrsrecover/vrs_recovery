@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     title: 'VRS Recovery - Vehicle & Roadside Assistance',
     description: 'VRS Recovery provides 24/7 Vehicle Recovery & Roadside Assistance across the UK. Fast, reliable towing, jump-starts, fuel delivery, and breakdown help when you it most.',
     images:[""],
-    creator: "", // Twitter Account 
+    creator: "@VRSRecovery", // Twitter Account 
   },
   
   alternates: {
@@ -91,6 +91,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preload" href="https://vrsrecovery.co.uk/favicon.ico" as="image"/>
+      </head>
       <body className={`font-sans ${spaceGrotesk.variable} ${dmSans.variable} antialiased`}>
         {children}
 
