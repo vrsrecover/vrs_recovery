@@ -8,5 +8,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: "daily",
             priority: 1,
         },
+        {
+            url: "https://vrsrecovery.co.uk/android-chrome-192x192.png", 
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 1,
+        },
     ]
 }
