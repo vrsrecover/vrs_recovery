@@ -1,10 +1,8 @@
 import type React from "react";
-import { useEffect } from "react";
 import type { Metadata } from "next";
 import { Space_Grotesk, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import { usePathname, useSearchParams } from "next/navigation";
 // import Head from "next/head";
 
 const spaceGrotesk = Space_Grotesk({
@@ -106,16 +104,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  useEffect(() => {
-    const url = pathname + (searchParams.toString() ? `?${searchParams.toString()}` : "");
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("config", GA_TRACKING_ID, {
-        page_path: url,
-      });
-    }
-  }, [pathname, searchParams]);
   return (
     <html lang="en">
       {/* <Head>
