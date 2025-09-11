@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     // },
   },
 
-  manifest: "/site.webmanifest",
+  manifest: "/manifest.json",
 
   openGraph: {
     title: "VRS Recovery - Vehicle & Roadside Assistance",
