@@ -1,9 +1,11 @@
 import type React from "react";
+import { useEffect } from "react";
 import type { Metadata } from "next";
 import { Space_Grotesk, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import Head from "next/head";
+import { usePathname, useSearchParams } from "next/navigation";
+// import Head from "next/head";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -18,6 +20,8 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   weight: ["400", "500", "600"],
 });
+
+const GA_TRACKING_ID = "G-FMJTF4C691";
 
 export const metadata: Metadata = {
   title: "VRS Recovery - Vehicle & Roadside Assistance",
@@ -102,6 +106,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    const url = pathname + (searchParams.toString() ? `?${searchParams.toString()}` : "");
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("config", GA_TRACKING_ID, {
+        page_path: url,
+      });
+    }
+  }, [pathname, searchParams]);
   return (
     <html lang="en">
       {/* <Head>
@@ -116,6 +130,21 @@ export default function RootLayout({
         className={`font-sans ${spaceGrotesk.variable} ${dmSans.variable} antialiased`}
       >
         {children}
+
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
 
         <Script
           id="organization-ld-json"
