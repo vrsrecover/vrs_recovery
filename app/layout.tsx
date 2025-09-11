@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Space_Grotesk, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-// import Head from "next/head";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
