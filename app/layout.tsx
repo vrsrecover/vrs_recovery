@@ -19,6 +19,7 @@ const dmSans = DM_Sans({
 });
 
 const GA_TRACKING_ID = "G-FMJTF4C691";
+const GTM_ID = "GTM-NMSNGWDZ";
 
 export const metadata: Metadata = {
   title: "VRS Recovery - Vehicle & Roadside Assistance",
@@ -105,14 +106,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <Head>
-        <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon" />
-        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
-        <link rel="shortcut icon" href="/favicon-32x32.png" sizes="32x32" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        
-      </Head> */}
+      <head>
+        <Script id="gtm-script" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','${GTM_ID}');
+          `}
+        </Script>
+      </head>
       <body
         className={`font-sans ${spaceGrotesk.variable} ${dmSans.variable} antialiased`}
       >
@@ -132,6 +136,15 @@ export default function RootLayout({
             });
           `}
         </Script>
+
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
 
         <Script
           id="organization-ld-json"
