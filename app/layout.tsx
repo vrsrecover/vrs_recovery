@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import Head from "next/head";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -103,14 +104,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon" />
         <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
         <link rel="shortcut icon" href="/favicon-32x32.png" sizes="32x32" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         {/* <link rel="preload" href="/android-chrome-512x512.png" as="image" /> */}
-      </head>
+      </Head>
       <body
         className={`font-sans ${spaceGrotesk.variable} ${dmSans.variable} antialiased`}
       >
