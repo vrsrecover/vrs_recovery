@@ -26,6 +26,14 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navItems = [
+    {name: "home", href: "#home"},
+    {name: "services", href: "#services"},
+    {name: "gallery", href: "/gallery"},
+    {name: "about", href: "#about"},
+    {name: "contact", href: "#contact"},
+  ]
+
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -81,18 +89,18 @@ export function Header() {
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
-            {["home", "services", "coverage", "about", "contact"].map(
+            {navItems.map(
               (item) => (
                 <Link
-                  key={item}
-                  href={`#${item}`}
+                  key={item.name}
+                  href={item.href}
                   className={`hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 font-medium relative group ${
                     isInHero
                       ? "text-white drop-shadow-lg [text-shadow:_0_1px_2px_rgb(0_0_0_/_0.8)]"
                       : "text-black dark:text-gray-300"
                   }`}
                 >
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                  {item.name.charAt(0).toUpperCase() + item.name.slice(1)}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-300 group-hover:w-full shadow-sm"></span>
                 </Link>
               )
@@ -161,18 +169,18 @@ export function Header() {
             }`}
           >
             <nav className="flex flex-col space-y-4">
-              {["home", "services", "coverage", "about", "contact"].map(
+              {navItems.map(
                 (item) => (
                   <Link
-                    key={item}
-                    href={`#${item}`}
+                    key={item.name}
+                    href={item.href}
                     className={`hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2 px-4 rounded-lg ${
                       isInHero
                         ? "text-white hover:bg-gray-100/20 dark:hover:bg-gray-800/20 drop-shadow-sm"
                         : "text-black dark:text-gray-300 hover:bg-gray-100/60 dark:hover:bg-gray-800/60"
                     }`}
                   >
-                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                    {item.name.charAt(0).toUpperCase() + item.name.slice(1)}  
                   </Link>
                 )
               )}
