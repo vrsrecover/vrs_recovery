@@ -29,6 +29,7 @@ export function Header() {
   const navItems = [
     {name: "home", href: "#home"},
     {name: "services", href: "#services"},
+    {name: "coverage", href: "#coverage"},
     {name: "gallery", href: "/gallery"},
     {name: "about", href: "#about"},
     {name: "contact", href: "#contact"},
@@ -93,7 +94,7 @@ export function Header() {
               (item) => (
                 <Link
                   key={item.name}
-                  href={item.href}
+                  href={item.href.startsWith('#') ? `/${item.href}` : item.href}
                   className={`hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 font-medium relative group ${
                     isInHero
                       ? "text-white drop-shadow-lg [text-shadow:_0_1px_2px_rgb(0_0_0_/_0.8)]"
