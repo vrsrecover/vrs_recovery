@@ -65,9 +65,9 @@ export const metadata: Metadata = {
     siteName: "VRS Recovery",
     images: [
       {
-        url: "https://vrsrecovery.co.uk/android-chrome-512x512.png",
-        width: 512,
-        height: 512,
+        url: "https://vrsrecovery.co.uk/favicon.ico",
+        width: 48,
+        height: 48,
         alt: "VRS Recovery Roadside Assistance UK",
       },
     ],
