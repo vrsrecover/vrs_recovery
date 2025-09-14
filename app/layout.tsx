@@ -49,10 +49,10 @@ export const metadata: Metadata = {
       url: "/favicon.ico", sizes: "any"
     },
     apple: "/apple-touch-icon.png",
-    // other: {
-    //   rel: "icon",
-    //   url: "/android-chrome-512x512.png",
-    // },
+    other: {
+      rel: "icon",
+      url: "/android-chrome-192x192.png",
+    },
   },
 
   manifest: "/manifest.json",
