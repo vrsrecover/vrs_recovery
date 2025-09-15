@@ -158,7 +158,7 @@ export default function RootLayout({
             "@type": "Organization",
             name: "VRS Recovery",
             url: "https://vrsrecovery.co.uk",
-            logo: "https://vrsrecovery.co.uk/android-chrome-512x512.png",
+            logo: "https://vrsrecovery.co.uk/apple-touch-icon.png",
             description:
               "VRS Recovery provides 24/7 Vehicle Recovery & Roadside Assistance across the UK. Fast, reliable towing, jump-starts, fuel delivery, and breakdown help when you need it most.",
             telephone: "+447475365247",
