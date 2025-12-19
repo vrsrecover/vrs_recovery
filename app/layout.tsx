@@ -40,17 +40,19 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      // { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      // { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
       { url: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
     ],
-    shortcut: "/favicon.ico",
+    shortcut: {
+      url: "/favicon.ico", sizes: "any"
+    },
     apple: "/apple-touch-icon.png",
-    // other: {
-    //   rel: "icon",
-    //   url: "/android-chrome-512x512.png",
-    // },
+    other: {
+      rel: "icon",
+      url: "/android-chrome-192x192.png",
+    },
   },
 
   manifest: "/manifest.json",
@@ -63,9 +65,9 @@ export const metadata: Metadata = {
     siteName: "VRS Recovery",
     images: [
       {
-        url: "https://vrsrecovery.co.uk/android-chrome-512x512.png",
-        width: 512,
-        height: 512,
+        url: "https://vrsrecovery.co.uk/favicon.ico",
+        width: 48,
+        height: 48,
         alt: "VRS Recovery Roadside Assistance UK",
       },
     ],
@@ -156,7 +158,7 @@ export default function RootLayout({
             "@type": "Organization",
             name: "VRS Recovery",
             url: "https://vrsrecovery.co.uk",
-            logo: "https://vrsrecovery.co.uk/android-chrome-512x512.png",
+            logo: "https://vrsrecovery.co.uk/apple-touch-icon.png",
             description:
               "VRS Recovery provides 24/7 Vehicle Recovery & Roadside Assistance across the UK. Fast, reliable towing, jump-starts, fuel delivery, and breakdown help when you need it most.",
             telephone: "+447475365247",
