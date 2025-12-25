@@ -137,7 +137,7 @@ export function Footer() {
                   <div className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Mail className="w-3 h-3 sm:w-4 sm:h-4 text-blue-600" />
                   </div>
-                  <span>vrsrec247@gmail.com</span>
+                  <span>vrsrecovery909@gmail.com</span>
                 </div>
                 <div className="flex items-start space-x-3 text-gray-300">
                   <div className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-100 rounded-lg flex items-center justify-center mt-0.5 flex-shrink-0">
